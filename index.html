@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal web about my learning in HTML, CSS .">
+    <meta name="keywords" content="My Web, HTML, CSS, Learning, Textfiles">
+    <meta name="author" content="Satabut">
+    <meta name="robots" content="index, follow">
+    <title>My Web — Personal Learning Project</title>
+    <style>
+        body{
+            background-image: url('picture/Cyber_bg.jpg');
+            background-size: cover;      /* ให้พื้นหลังปรับตามจอ */
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ใช้ Flex เพื่อให้ div อยู่แถวเดียวกัน */
+        .top-container {
+            display: flex;
+            flex-wrap: nowrap;
+            background-color: black;
+            padding: 7px;
+            gap: 7px; /* ช่องว่างระหว่าง div */
+        }
+
+        .div1{
+            background-color: #00FF00;
+            height: 80px;
+            width: 250px;      /* คงขนาดซ้ายไว้ */
+            flex-shrink: 0;    /* ห้ามหด */
+            
+        }
+
+        .div2{
+            background-color: #00FF00;
+            height: 80px;
+            flex-grow: 1;      /* ยืดเต็มพื้นที่ด้านขวา */
+        }
+
+        h1{
+            text-align: center;
+            font-size: 150%;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 25px;
+        }
+
+        .div_left{
+            background-color: black;
+            height: 870px;
+            width: 250px;
+            margin: 7px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .but{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #00FF00;
+            padding: 4px;
+            margin-top: 50px;
+            width: 175px;
+            border: none;
+            color: black;
+            font-size: large;
+            cursor: pointer;
+        }
+        .but:hover{
+            background-color: #004400;
+            transform: scale(0.95);
+            transition: 1s;
+        }
+        h2{
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+        }
+        .div_main{
+            height: 20vh;
+            width: 100%;
+            background-color: black;
+        }
+        h3{
+            background-color: black;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-container">
+        <div class="div1">
+            <h1>My Web</h1>
+        </div>
+
+        <div class="div2">
+            <h1>Hello! this Is My Web</h1>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: nowrap;">
+    <div class="div_left">
+        <input type="button" class="but" value="Welcome" onclick="alert('Hello, welcome to my website. Please feel free to explore and enjoy your time here! ❤️')">
+        <a href="who.html"><input type="button" class="but" value="Who are you?" ></a>
+        <a href="where.html"><input type="button" class="but" value="Where are you?"></a>
+        <a href="how.html"><input type="button" class="but" value="How Can I help?"></a>
+
+        <h4 style="color: #00FF00; font-family: 'Courier New', Courier, monospace; margin-top: 100px;">password for secret</h4>
+        <input type="password" id="pass" style="background-color: black; border-color: #00FF00; color: #00FF00; ">
+        <input type="button" onclick="checkPass()" value="Try" style="background-color: black; border-color: #00FF00; color: #00FF00; cursor:not-allowed;">
+        <p id="result" style="color:#00FF00;"></p>
+    </div>
+
+    <div class="div_main">
+        <div style=" width: 100%; background-color: black; display: flex; justify-content: center; align-items: center;">
+            <h2>What Is My Web</h2>
+        </div>
+        <h3>&emsp;&emsp;&emsp;My web is a small personal project that I created to learn HTML and CSS. In the future, I may add JavaScript, Node.js, or PHP to work alongside it. The code might look a bit messy because I’ve just begun learning HTML and CSS, but later on I hope to build a more beautiful website with more features. As for the “password for secret,” I honestly don’t remember it… so just press F12 to check it.
+        My web was inspired by textfiles.</h3>
+        <h3>
+            TEXTFILES :
+            <a style="color: #00FF00;" href="http://www.textfiles.com/index.html">http://www.textfiles.com/index.html</a>
+        </h3>
+    </div>
+    </div>
+
+    <script>
+    function checkPass() {
+    const correct = "0110001101111001011000100110010101110010"; // ← รหัสที่ต้องการ
+    const input = document.getElementById("pass").value;
+
+    if (input === correct) {
+         window.location.href = "secret.html";
+    } else {
+        document.getElementById("result").style.fontFamily = "'Courier New', monospace"
+        document.getElementById("result").textContent = "invalid password";
+    }
+    }
+    </script>
+
+</body>
+</html>
